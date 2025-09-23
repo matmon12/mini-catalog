@@ -12,7 +12,7 @@ import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/starter-pack/',
+  base: process.env.NODE_ENV === 'production' ? '/starter-pack/': '/',
   plugins: [
     vue(),
     checker({
