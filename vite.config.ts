@@ -1,4 +1,6 @@
 import { fileURLToPath, URL } from 'node:url'
+import { copyFileSync } from 'node:fs'
+import { join } from 'node:path'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -8,11 +10,32 @@ import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
+// Плагин для создания 404.html для GitHub Pages
+function githubPages404() {
+  return {
+    name: 'github-pages-404',
+    closeBundle() {
+      const outDir = join(process.cwd(), 'dist')
+      const indexPath = join(outDir, 'index.html')
+      const notFoundPath = join(outDir, '404.html')
+
+      try {
+        // Копируем index.html в 404.html
+        copyFileSync(indexPath, notFoundPath)
+        console.log('✓ Создан 404.html для GitHub Pages')
+      } catch (error) {
+        console.error('Ошибка при создании 404.html:', error)
+      }
+    },
+  }
+}
+
 // https://vite.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === 'production' ? '/mini-catalog/' : '/',
   plugins: [
     vue(),
+    githubPages404(),
     AutoImport({
       imports: ['vue', 'vue-router', '@vueuse/head', '@vueuse/core'],
       dts: './auto-imports.d.ts',
