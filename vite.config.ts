@@ -2,35 +2,21 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import checker from 'vite-plugin-checker'
 import AutoImport from 'unplugin-auto-import/vite'
 import IconsResolver from 'unplugin-icons/resolver'
 import Icons from 'unplugin-icons/vite'
 import Components from 'unplugin-vue-components/vite'
-import { PrimeVueResolver } from 'unplugin-vue-components/resolvers'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/starter-pack/': '/',
+  base: process.env.NODE_ENV === 'production' ? '/mini-catalog/' : '/',
   plugins: [
     vue(),
-    checker({
-      vueTsc: true,
-    }),
     AutoImport({
-      imports: [
-        'vue',
-        'vue-router',
-        '@vueuse/head',
-        '@vueuse/core',
-        {
-          '@/app/utils/classes': ['getClasses'],
-          '@/app/utils': ['getImageUrl']
-        },
-      ],
+      imports: ['vue', 'vue-router', '@vueuse/head', '@vueuse/core'],
       dts: './auto-imports.d.ts',
-      vueTemplate: true
+      vueTemplate: true,
     }),
     Components({
       dirs: ['src/**/components'],
@@ -42,7 +28,6 @@ export default defineConfig({
         IconsResolver({
           // prefix: false,
         }),
-        PrimeVueResolver(),
       ],
     }),
     Icons({
@@ -97,8 +82,21 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@/app/styles/mixins.scss" as *;`,
+        additionalData: `@use "@/styles/mixins.scss" as *;`,
       },
+    },
+  },
+  server: {
+    host: '0.0.0.0', // Слушать на всех интерфейсах (решает проблемы с VPN)
+    port: 5173, // Порт по умолчанию
+    strictPort: false, // Если порт занят, попробует следующий
+    open: false, // Можно изменить на true, если нужно автоматически открывать браузер
+    // Разрешаем CORS для работы с VPN
+    cors: true,
+    // Настройки для HMR (Hot Module Replacement) при VPN
+    // Если VPN блокирует WebSocket, используйте polling
+    watch: {
+      usePolling: false, // Включите true, если WebSocket не работает через VPN
     },
   },
 })

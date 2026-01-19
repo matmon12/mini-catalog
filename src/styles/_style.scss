@@ -1,0 +1,17 @@
+.container {
+  max-width: 1300px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--neutral-700);
+  color: var(--white);
+  font-size: 14px;
+  overflow-y: auto;
+}
+
+a {
+  color: var(--white);
+}

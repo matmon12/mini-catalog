@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "make": "Toyota",
+    "model": "Camry",
+    "year": 2023,
+    "price": 20000,
+    "model_seats": 5,
+    "model_transmission_type": "Automatic",
+    "model_engine_power_ps": 203
+  },
+  {
+    "id": 2,
+    "make": "BMW",
+    "model": "X5",
+    "year": 2024,
+    "price": 25000,
+    "model_seats": 5,
+    "model_transmission_type": "Manual",
+    "model_engine_power_ps": 335
+  },
+  {
+    "id": 3,
+    "make": "Mercedes-Benz",
+    "model": "C-Class",
+    "year": 2023,
+    "price": 22000,
+    "model_seats": 5,
+    "model_transmission_type": "Automatic",
+    "model_engine_power_ps": 255
+  },
+  {
+    "id": 4,
+    "make": "Audi",
+    "model": "A4",
+    "year": 2023,
+    "price": 30000,
+    "model_seats": 5,
+    "model_transmission_type": "Automatic",
+    "model_engine_power_ps": 245
+  },
+  {
+    "id": 5,
+    "make": "Tesla",
+    "model": "Model 3",
+    "year": 2024,
+    "price": 35000,
+    "model_seats": 5,
+    "model_transmission_type": "Manual",
+    "model_engine_power_ps": 283
+  },
+  {
+    "id": 6,
+    "make": "Ford",
+    "model": "F-150",
+    "year": 2023,
+    "price": 38000,
+    "model_seats": 5,
+    "model_transmission_type": "Automatic",
+    "model_engine_power_ps": 400
+  },
+  {
+    "id": 7,
+    "make": "Honda",
+    "model": "Civic",
+    "year": 2024,
+    "price": 40000,
+    "model_seats": 5,
+    "model_transmission_type": "CVT",
+    "model_engine_power_ps": 158
+  },
+  {
+    "id": 8,
+    "make": "Volkswagen",
+    "model": "Golf",
+    "year": 2023,
+    "price": 32000,
+    "model_seats": 5,
+    "model_transmission_type": "Automatic",
+    "model_engine_power_ps": 245
+  },
+  {
+    "id": 9,
+    "make": "Porsche",
+    "model": "911",
+    "year": 2024,
+    "price": 28500,
+    "model_seats": 4,
+    "model_transmission_type": "Manual",
+    "model_engine_power_ps": 385
+  },
+  {
+    "id": 10,
+    "make": "Lexus",
+    "model": "RX",
+    "year": 2023,
+    "price": 24500,
+    "model_seats": 5,
+    "model_transmission_type": "CVT",
+    "model_engine_power_ps": 308
+  }
+]

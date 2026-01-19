@@ -1,25 +1,12 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import PrimeVue from 'primevue/config'
-import Aura from '@primeuix/themes/aura'
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 
-import App from '@/app/App.vue'
-import router from '@/app/router/index'
-import directives from "@/app/directives"
+import App from '@/App.vue'
+import router from '@/router/index'
 import '@/index.scss'
 
 const app = createApp(App)
+const pinia = createPinia()
 
-directives.forEach((directive) => {
-  app.directive(directive.name, directive)
-})
-
-app.use(createPinia())
-app.use(router)
-app.use(PrimeVue, {
-  theme: {
-    preset: Aura
-  }
-})
-
-app.mount('#app')
+app.use(pinia).use(router).use(autoAnimatePlugin).mount('#app')

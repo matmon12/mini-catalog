@@ -1,0 +1,82 @@
+@mixin TextOverflow($lines, $shadow-offset: 0px) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @if $shadow-offset > 0 {
+    padding-bottom: $shadow-offset;
+    margin-bottom: -$shadow-offset;
+    padding-right: $shadow-offset;
+    margin-right: -$shadow-offset;
+    padding-left: $shadow-offset;
+    margin-left: -$shadow-offset;
+  }
+}
+
+@mixin Scroll(
+  $height,
+  $width,
+  $colorTrack: var(--scroll-track-color),
+  $colorThumb: var(--scroll-thumb-color)
+) {
+  &::-webkit-scrollbar {
+    height: $height;
+    width: $width;
+  }
+  &::-webkit-scrollbar-track {
+    background: $colorTrack;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $colorThumb;
+    border-radius: 20px;
+  }
+}
+
+@mixin CarBlock {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-3xl);
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(
+    180deg,
+    #1a1a1a 0%,
+    #1e1e1e 20%,
+    #171717 50%,
+    #0f0f0f 80%,
+    #0a0a0a 100%
+  );
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(
+      ellipse at center,
+      rgba(255, 255, 255, 0.12) 0%,
+      rgba(255, 255, 255, 0.08) 20%,
+      rgba(255, 255, 255, 0.04) 40%,
+      rgba(255, 255, 255, 0.02) 60%,
+      transparent 80%
+    );
+    pointer-events: none;
+  }
+}

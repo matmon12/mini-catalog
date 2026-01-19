@@ -29,11 +29,11 @@
 
 <br>
 
-## :dart: About ##
+## :dart: About
 
 Starter template Vite + Vue3
 
-## :sparkles: Features ##
+## :sparkles: Features
 
 :heavy_check_mark: Vite 7 + Vue 3;\
 :heavy_check_mark: Vue-router;\
@@ -48,7 +48,7 @@ Starter template Vite + Vue3
 :heavy_check_mark: Eslint & prettier;\
 :heavy_check_mark: Modular architecture.
 
-## :rocket: Technologies ##
+## :rocket: Technologies
 
 The following tools were used in this project:
 
@@ -62,11 +62,11 @@ The following tools were used in this project:
 - [Unplugin](https://unplugin.unjs.io/)
 - [SASS](https://sass-lang.com/)
 
-## :white_check_mark: Requirements ##
+## :white_check_mark: Requirements
 
 Before starting :checkered_flag:, you need to have [Git](https://git-scm.com) and [Node](https://nodejs.org/en/) installed.
 
-## :checkered_flag: Starting ##
+## :checkered_flag: Starting
 
 ```bash
 # Clone this project
@@ -93,10 +93,9 @@ This template should help get you started developing with Vue 3 in Vite. The tem
 
 - [VS Code](https://code.visualstudio.com/) + [Vue](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
 
-## :memo: License ##
+## :memo: License
 
 This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
-
 
 Made with :heart: by <a href="https://github.com/matmon12" target="_blank">Matmon</a>
 
