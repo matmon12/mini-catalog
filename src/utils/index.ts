@@ -1,6 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import random from 'random'
-
 export const getImageUrl = (module: string, path: string): string => {
   return new URL(`/src/${module}/assets/images/${path}`, import.meta.url).href
 }
@@ -109,14 +107,14 @@ export async function simulateError(
 ): Promise<void>
 export async function simulateError(
   errorMessage: string = 'Ошибка при загрузке данных',
-  probability: number = 0.3,
+  probability: number = 0.2,
   delayMs: number = 1500,
 ): Promise<void> {
   if (probability <= 0) return
 
   await delay(delayMs)
 
-  if (random.bernoulli(probability)()) {
+  if (Math.random() < probability) {
     throw new Error(errorMessage)
   }
 }
