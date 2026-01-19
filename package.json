@@ -1,5 +1,5 @@
 {
-  "name": "starter-pack",
+  "name": "mini-catalog",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -30,6 +30,7 @@
     "vite-plugin-image-optimizer": "^2.0.2",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1",
+    "vue-tsc": "^3.2.2",
     "yup": "^1.7.1"
   },
   "devDependencies": {
