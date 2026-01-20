@@ -1,4 +1,9 @@
-# Mini Catalog - Каталог автомобилей
+<h1 align="center">Mini Catalog</h1>
+
+<div align="center" id="top">
+  <img src="./public/Screenshot 2026-01-20 141558.png" alt="logo" />
+</div>
+&#xa0;
 
 Веб-приложение для просмотра и редактирования каталога автомобилей, разработанное на Vue 3 с использованием TypeScript.
 
